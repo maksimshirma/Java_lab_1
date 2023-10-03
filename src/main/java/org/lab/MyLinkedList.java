@@ -99,7 +99,6 @@ public class MyLinkedList {
             } else if (this.size > 1) {
                 if (this.head.value == _value) {
                     this.head = this.head.next;
-                    this.size--;
                 } else {
                     Node temp = this.head;
                     while (temp.next.value != _value) {
@@ -111,6 +110,7 @@ public class MyLinkedList {
                     }
                     temp.next = temp.next.next;
                 }
+                this.size--;
             }
 
         }
@@ -158,5 +158,32 @@ public class MyLinkedList {
         } else {
             return "Список пуст.";
         }
+    }
+
+    /**
+     * The redefined method. Allows you to check lists are equal or not.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (o == null || o.getClass() != this.getClass()) {
+            return false;
+        }
+
+        MyLinkedList list = (MyLinkedList) o;
+        if (list.size != this.size) {
+            return false;
+        }
+
+        Node a = list.head;
+        for(Node b = this.head; a != null && b != null; b = b.next) {
+            if (a.value != b.value) {
+                return false;
+            }
+            a = a.next;
+        }
+        return true;
     }
 }
