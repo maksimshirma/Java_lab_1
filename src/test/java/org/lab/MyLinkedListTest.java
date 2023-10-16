@@ -13,7 +13,7 @@ public class MyLinkedListTest {
      */
     @Test
     public void has() {
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
         int value1 = 5;
         int value2 = 234;
         int value3 = -16345;
@@ -38,11 +38,12 @@ public class MyLinkedListTest {
         int value2 = 234;
         int value3 = -16345;
         int value4 = 2523;
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
         list.addToHead(value1);
         list.addToHead(value2);
         list.addToHead(value3);
         list.addToHead(value4);
+
         assertTrue(list.has(value1));
         assertTrue(list.has(value2));
         assertTrue(list.has(value3));
@@ -58,7 +59,7 @@ public class MyLinkedListTest {
         int value2 = 234;
         int value3 = -16345;
         int value4 = 2523;
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
         list.addToEnd(value1);
         list.addToEnd(value2);
         list.addToEnd(value3);
@@ -74,7 +75,7 @@ public class MyLinkedListTest {
      */
     @Test
     public void delete() {
-        MyLinkedList actualList = new MyLinkedList();
+        MyLinkedList<Integer> actualList = new MyLinkedList<Integer>();
         int value1 = 5;
         int value2 = 234;
         int value3 = -16345;
@@ -86,7 +87,7 @@ public class MyLinkedListTest {
         actualList.delete(value3);
         actualList.delete(value2);
 
-        MyLinkedList expectedList = new MyLinkedList();
+        MyLinkedList<Integer> expectedList = new MyLinkedList<Integer>();
         expectedList.addToHead(value1);
         expectedList.addToHead(value4);
 

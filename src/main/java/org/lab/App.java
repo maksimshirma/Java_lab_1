@@ -35,7 +35,7 @@ public class App {
     public static void main( String[] args ) {
         Scanner scanner = new Scanner(System.in);
 
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
 
         int action;
         do {
