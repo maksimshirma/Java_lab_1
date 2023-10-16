@@ -14,11 +14,19 @@ public class MyLinkedListTest {
     @Test
     public void has() {
         MyLinkedList list = new MyLinkedList();
-        for (int i = 0; i < 6; i++) {
-            list.addToEnd(i);
-        }
-        assertTrue(list.has(3));
-        assertFalse(list.has(-2));
+        int value1 = 5;
+        int value2 = 234;
+        int value3 = -16345;
+        int value4 = 2523;
+        list.addToHead(value1);
+        list.addToEnd(value2);
+        list.addToHead(value3);
+        list.addToEnd(value4);
+        assertTrue(list.has(value1));
+        assertTrue(list.has(value2));
+        assertTrue(list.has(value3));
+        assertTrue(list.has(value4));
+        assertFalse(list.has(12));
     }
 
     /**
@@ -26,10 +34,19 @@ public class MyLinkedListTest {
      */
     @Test
     public void addToHead() {
-        int value = 5;
+        int value1 = 5;
+        int value2 = 234;
+        int value3 = -16345;
+        int value4 = 2523;
         MyLinkedList list = new MyLinkedList();
-        list.addToHead(value);
-        assertTrue(list.has(value));
+        list.addToHead(value1);
+        list.addToHead(value2);
+        list.addToHead(value3);
+        list.addToHead(value4);
+        assertTrue(list.has(value1));
+        assertTrue(list.has(value2));
+        assertTrue(list.has(value3));
+        assertTrue(list.has(value4));
     }
 
     /**
@@ -37,10 +54,19 @@ public class MyLinkedListTest {
      */
     @Test
     public void addToEnd() {
-        int value = 5;
+        int value1 = 5;
+        int value2 = 234;
+        int value3 = -16345;
+        int value4 = 2523;
         MyLinkedList list = new MyLinkedList();
-        list.addToEnd(value);
-        assertTrue(list.has(value));
+        list.addToEnd(value1);
+        list.addToEnd(value2);
+        list.addToEnd(value3);
+        list.addToEnd(value4);
+        assertTrue(list.has(value1));
+        assertTrue(list.has(value2));
+        assertTrue(list.has(value3));
+        assertTrue(list.has(value4));
     }
 
     /**
@@ -49,20 +75,20 @@ public class MyLinkedListTest {
     @Test
     public void delete() {
         MyLinkedList actualList = new MyLinkedList();
-        for (int i = 0; i < 10; i++) {
-            actualList.addToEnd(i);
-        }
-        actualList.delete(0);
-        actualList.delete(9);
-        actualList.delete(5);
-        actualList.delete(11);
+        int value1 = 5;
+        int value2 = 234;
+        int value3 = -16345;
+        int value4 = 2523;
+        actualList.addToHead(value1);
+        actualList.addToEnd(value2);
+        actualList.addToEnd(value3);
+        actualList.addToHead(value4);
+        actualList.delete(value3);
+        actualList.delete(value2);
 
         MyLinkedList expectedList = new MyLinkedList();
-        for (int i = 1; i < 9; i++) {
-            if (i != 5) {
-                expectedList.addToEnd(i);
-            }
-        }
+        expectedList.addToHead(value1);
+        expectedList.addToHead(value4);
 
         assertEquals(actualList, expectedList);
     }
